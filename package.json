@@ -1,0 +1,23 @@
+{
+  "name": "incubyte-assessment",
+  "version": "1.0.0",
+  "description": "Icubyte Assessment based on TDD having code for String Calculator TDD Kata.",
+  "homepage": "https://github.com/Akshay3237/Incubyte-Assessment#readme",
+  "bugs": {
+    "url": "https://github.com/Akshay3237/Incubyte-Assessment/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshay3237/Incubyte-Assessment.git"
+  },
+  "license": "ISC",
+  "author": "akshay",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
