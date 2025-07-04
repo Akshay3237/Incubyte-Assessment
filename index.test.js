@@ -36,7 +36,7 @@ test("Allow the add method to handle any amount of numbers" ,()=>{
 
 test("Allow the add method to handle new lines between numbers",()=>{
     calc=new StringCalculator();
-    numbers="12,24/n25,50/n4333";
+    numbers="12,24\n25,50\n4333";
     const sum=calc.add(numbers);
     expect(sum).toBe(4444);
 });
