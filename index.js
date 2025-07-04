@@ -2,7 +2,12 @@
 class StringCalculator{
     add(n){
         if(n=="") return 0;
-        return parseInt(n);
+        if(!isNaN(parseInt(n))){
+            return parseInt(n);
+        }
+        else{
+            throw new Error("Non-numeric is not allowed!");
+        }
     }
 }
 

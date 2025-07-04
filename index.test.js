@@ -17,5 +17,5 @@ test('only one numeric value pass as string', () => {
 
 test('for non numeric values it will raise excpetion',()=>{
     const calc=new StringCalculator();
-    expect(()=> calc.add("a") ).toTrow("Non-numeric is not allowed!");
+    expect(()=> calc.add("a") ).toThrow("Non-numeric is not allowed!");
 })
