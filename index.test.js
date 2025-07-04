@@ -59,5 +59,5 @@ test("Support different delimiters:",()=>{
 test("Calling add with a negative number will throw an exception",()=>{
     calc=new StringCalculator();
     numbers="//;\n12,24;25,50\n-4333;-12;25;26,-4\n-7";
-    expect(()=>calc.add(numbers)).toThrow("negative numbers not allowed -433,-12,-4,-7");
+    expect(()=>calc.add(numbers)).toThrow("negative numbers not allowed -4333,-12,-4,-7");
 });
