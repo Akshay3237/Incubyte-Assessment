@@ -40,3 +40,18 @@ test("Allow the add method to handle new lines between numbers",()=>{
     const sum=calc.add(numbers);
     expect(sum).toBe(4444);
 });
+
+/*
+To change the delimiter, the beginning of the string will contain 
+a separate line that looks like this: "//[delimiter]\n[numbers…]".
+//  For example, "//;\n1;2" where the delimiter is ";"
+//  should return 3.
+*/
+
+
+test("Support different delimiters:",()=>{ 
+    calc=new StringCalculator();
+    numbers="//;\n12,24;25,50\n4333";
+    const sum=calc.add(numbers);
+    expect(sum).toBe(4444);
+})
