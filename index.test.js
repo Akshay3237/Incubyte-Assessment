@@ -6,3 +6,11 @@ test('first test case with empty string', () => {
     const sum=calc.add(n);
     expect(sum).toBe(0);
 });
+
+
+test('only one numeric value pass as string', () => {
+    const calc=new StringCalculator();
+    n="12";
+    const sum=calc.add(n);
+    expect(sum).toBe(12);
+});
