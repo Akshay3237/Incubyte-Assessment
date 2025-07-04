@@ -15,7 +15,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "devDependencies": {
     "jest": "^30.0.4"
