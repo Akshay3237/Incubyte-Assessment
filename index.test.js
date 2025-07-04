@@ -19,3 +19,10 @@ test('for non numeric values it will raise excpetion',()=>{
     const calc=new StringCalculator();
     expect(()=> calc.add("a") ).toThrow("Non-numeric is not allowed!");
 })
+
+test("input as two values with comma seperation",()=>{
+    const calc=new StringCalculator();
+    numbers="12,24";
+    const sum=calc.add(numbers);
+    expect(sum).toBe(36);
+})
