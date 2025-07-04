@@ -26,3 +26,10 @@ test("input as two values with comma seperation",()=>{
     const sum=calc.add(numbers);
     expect(sum).toBe(36);
 })
+
+test("Allow the add method to handle any amount of numbers" ,()=>{
+     const calc=new StringCalculator();
+    numbers="12,24,25,50,4333";
+    const sum=calc.add(numbers);
+    expect(sum).toBe(4444);
+})
