@@ -2,7 +2,7 @@
 class StringCalculator{
     add(numbers){
         if(numbers=="") return 0;
-        numbers=numbers.split(",");
+        numbers=numbers.split(/[\n,]/);
 
         let sum=0;
         for(let i=0;i<numbers.length;i++){
@@ -15,8 +15,6 @@ class StringCalculator{
         }
 
             return sum;
-        
-        
     }
 }
 
