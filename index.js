@@ -1,35 +1,37 @@
 
 class StringCalculator {
-    #counting_of_add=0;
-    
+    #counting_of_add = 0;
 
 
-    GetCalledCount(){
+
+    GetCalledCount() {
         return this.#counting_of_add;
     }
 
     add(numbers) {
         this.#counting_of_add++;
         if (numbers == "") return 0;
-        let delimiters = "\n,"; //default delimiters
+
         let negative_numbers = []; //contains negative numbers
-        if (numbers.startsWith("//") && numbers[3] === '\n') {
-            delimiters += numbers[2]; //find delimiter here
-            numbers = numbers.substring(4); //changing position of numbers to avoid first 3 characters
+        let delimiter = /[\n,]/;
+        
+
+        if (numbers.startsWith("//")) {
+            const delimiterLineEnd = numbers.indexOf("\n");
+            const customDelim = numbers.substring(2, delimiterLineEnd);
+            if(customDelim[0]=='['){
+                customDelim=customDelim.substring(1,customDelim.length-1);
+            }
+            delimiter = new RegExp(`\\n|,|${this.escapeRegex(customDelim)}`);
+            numbers = numbers.substring(delimiterLineEnd + 1);
         }
 
-        //adding escap characters to each
-        const escapedDelimiters = delimiters
-            .split('')
-            .map(c => '\\' + c)
-            .join('');
+        numbers = numbers.split(delimiter);
 
-        // create RegExp from the dynamic string because we can not directly use variable
-        const delimiterRegex = new RegExp(`[${escapedDelimiters}]`);
 
-        // now split using regex 
-        numbers = numbers.split(delimiterRegex); //here we can't split directly by taking all delimiter inside a string we need object of RegExp
-        let sum = 0; //for initial value of sum as zero
+
+        
+      let sum = 0; //for initial value of sum as zero
         for (let i = 0; i < numbers.length; i++) {
             if (!isNaN(parseInt(numbers[i]))) { //check if non numeric values 
                 if (numbers[i] < 0) negative_numbers.push(numbers[i]); //if number is negative then add it here
@@ -50,6 +52,9 @@ class StringCalculator {
         }
 
         return sum; //return final sum
+    }
+    escapeRegex(str) {
+        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 }
 
