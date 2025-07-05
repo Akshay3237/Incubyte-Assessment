@@ -29,16 +29,16 @@ describe("Beginner's testsuite", () => {
 
     test("Allow the add method to handle any amount of numbers", () => {
         calc = new StringCalculator();
-        numbers = "12,24,25,50,4333";
+        numbers = "12,24,25,50,333";
         const sum = calc.add(numbers);
-        expect(sum).toBe(4444);
+        expect(sum).toBe(444);
     });
 
     test("Allow the add method to handle new lines between numbers", () => {
         calc = new StringCalculator();
-        numbers = "12,24\n25,50\n4333";
+        numbers = "12,24\n25,50\n333";
         const sum = calc.add(numbers);
-        expect(sum).toBe(4444);
+        expect(sum).toBe(444);
     });
 
     /*
@@ -51,9 +51,9 @@ describe("Beginner's testsuite", () => {
 
     test("Support different delimiters:", () => {
         calc = new StringCalculator();
-        numbers = "//;\n12,24;25,50\n4333";
+        numbers = "//;\n12,24;25,50\n333";
         const sum = calc.add(numbers);
-        expect(sum).toBe(4444);
+        expect(sum).toBe(444);
     });
 
     test("Calling add with a negative number will throw an exception", () => {
@@ -77,6 +77,6 @@ describe("testcases 6,7,8,9,10,11,12 given in pdf",()=>{
         const calc=new StringCalculator();
         numbers="2000,5,10,10,1004,15,4";
         sum=calc.add(numbers);
-        expect(sum).toBe(44);
+        expect(sum).toBe(44)
     });
 });
