@@ -1,6 +1,15 @@
 
 class StringCalculator {
+    #counting_of_add=0;
+    
+
+
+    GetCalledCount(){
+        return this.#counting_of_add;
+    }
+
     add(numbers) {
+        this.#counting_of_add++;
         if (numbers == "") return 0;
         let delimiters = "\n,"; //default delimiters
         let negative_numbers = []; //contains negative numbers
