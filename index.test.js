@@ -74,22 +74,29 @@ describe("Beginner's testsuite", () => {
 });
 
 //second part
-describe("after testcases 5 given in pdf",()=>{
-    test("Numbers bigger than 1000 should be ignored",()=>{
-        const calc=new StringCalculator();
-        numbers="2000,5,10,10,1004,15,4";
-        sum=calc.add(numbers);
+describe("after testcases 5 given in pdf", () => {
+    test("Numbers bigger than 1000 should be ignored", () => {
+        const calc = new StringCalculator();
+        numbers = "2000,5,10,10,1004,15,4";
+        sum = calc.add(numbers);
         expect(sum).toBe(44)
     });
 
-    test("how many times Add() was invoked",()=>{
-        const calc=new StringCalculator();
+    test("how many times Add() was invoked", () => {
+        const calc = new StringCalculator();
         calc.add("");
         calc.add("");
         calc.add("");
         calc.add("");
-        count=calc.GetCalledCount()
+        count = calc.GetCalledCount()
         expect(count).toBe(4);
-    })
+    });
 
+
+    test("Delimiters can be of any length", () => {
+        const calc = new StringCalculator();
+        numbers="//[***]\n1***2***3";
+        sum=calc.add(numbers);
+        expect(sum).toBe(6);
+    });
 });
