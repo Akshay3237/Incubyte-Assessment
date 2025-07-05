@@ -73,8 +73,10 @@ describe("Beginner's testsuite", () => {
 
 
 describe("testcases 6,7,8,9,10,11,12 given in pdf",()=>{
-    
-
-
-
+    test("Numbers bigger than 1000 should be ignored",()=>{
+        const calc=new StringCalculator();
+        numbers="2000,5,10,10,1004,15,4";
+        sum=calc.add(numbers);
+        expect(sum).toBe(44);
+    });
 });
