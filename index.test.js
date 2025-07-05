@@ -82,5 +82,14 @@ describe("after testcases 5 given in pdf",()=>{
         expect(sum).toBe(44)
     });
 
+    test("how many times Add() was invoked",()=>{
+        const calc=new StringCalculator();
+        calc.add("");
+        calc.add("");
+        calc.add("");
+        calc.add("");
+        count=calc.GetCalledCount()
+        expect(count).toBe(4);
+    })
 
 });
