@@ -107,4 +107,10 @@ describe("after testcases 5 given in pdf", () => {
         expect(sum).toBe(6);
     });
 
+    test("handle multiple delimiters with length longer than one char", () => {
+        const calc = new StringCalculator();
+        numbers = "//[**][%%]\n1**2%%3";
+        sum = calc.add(numbers);
+        expect(sum).toBe(6);
+    });
 });
