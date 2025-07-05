@@ -61,3 +61,10 @@ test("Calling add with a negative number will throw an exception",()=>{
     numbers="//;\n12,24;25,50\n-4333;-12;25;26,-4\n-7";
     expect(()=>calc.add(numbers)).toThrow("negative numbers not allowed -4333,-12,-4,-7");
 });
+
+
+test('not proper input :- delimiter at end of string',()=>{
+   const calc = new StringCalculator();
+   numbers="2,-4,3,-1,,";
+  expect(() => calc.add(numbers)).toThrow("Non-numeric is not allowed!");
+})
