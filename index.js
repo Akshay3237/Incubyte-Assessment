@@ -18,7 +18,7 @@ class StringCalculator {
 
         if (numbers.startsWith("//")) {
             const delimiterLineEnd = numbers.indexOf("\n");
-            const customDelim = numbers.substring(2, delimiterLineEnd);
+            let customDelim = numbers.substring(2, delimiterLineEnd);
             if(customDelim[0]=='['){
                 customDelim=customDelim.substring(1,customDelim.length-1);
             }

@@ -95,8 +95,10 @@ describe("after testcases 5 given in pdf", () => {
 
     test("Delimiters can be of any length", () => {
         const calc = new StringCalculator();
-        numbers = "//***\n1***2***3";
+        numbers = "//[***]\n1***2***3";
         sum = calc.add(numbers);
         expect(sum).toBe(6);
     });
+
+   
 });
